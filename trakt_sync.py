@@ -74,7 +74,6 @@ import sys
 import requests
 import argparse
 import datetime
-import requests
 import json
 
 from configparser import ConfigParser, NoOptionError, NoSectionError
