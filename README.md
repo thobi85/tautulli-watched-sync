@@ -1,5 +1,6 @@
 # Tautulli watched sync
-Automatically synchronize watched TV Shows to Trakt.tv and movies to Letterboxd
+Automatically synchronize watched TV Shows and movies to Trakt.tv
+It can also used for the initial load from existing tautulli history to trakt. 
 
 ## Setup
 Download `trakt_letterboxd_sync.py` and `sync_settings.ini.example` to your Tautulli host.
@@ -21,16 +22,9 @@ Rename `sync_settings.ini.example` to `sync_settings.ini` and add the `user_ids`
 
   To set the access code use `urn:ietf:wg:oauth:2.0:oob` as a redirect URI on your application.
   Then execute the script:
-  python ./trakt_letterboxd_sync.py --contentType trakt_authenticate --userId -1
+  python ./trakt_sync.py --contentType trakt_authenticate --userId -1
   And follow the instructions shown.
 
-  [Letterboxd]
-  Update `api_key` and `api_secret` with your Letterboxd API Key and API Shared Secret respectively.
-  Look [here](https://letterboxd.com/api-beta/) as for how to receive these credentials.
-
-  To set the access code execute the script:
-  python ./trakt_letterboxd_sync.py --contentType letterboxd_authenticate --userId -1
-  And follow the instructions shown.
 ```
 
 ### Tautulli
@@ -42,9 +36,9 @@ Configuration:
 Tautulli > Settings > Notification Agents > New Script > Configuration:
 
   Script Folder: /path/to/your/scripts
-  Script File: ./trakt_letterboxd_sync.py (Should be selectable in a dropdown list)
+  Script File: ./trakt_sync.py (Should be selectable in a dropdown list)
   Script Timeout: {timeout}
-  Description: Trakt.tv and Letterboxd sync
+  Description: Trakt.tv sync
   Save
 
 Triggers:
@@ -63,9 +57,7 @@ Script Arguments:
 Tautulli > Settings > Notification Agents > New Script > Script Arguments:
   
   Select: Watched
-  Arguments:  --userId {user_id} --contentType {media_type}
-              <movie>--imdbId {imdb_id}</movie>
-              <episode>--tvdbId {thetvdb_id} --season {season_num} --episode {episode_num}</episode>
+  Arguments:  --userId {user_id} --contentType {media_type} <movie>--imdbId {imdb_id}</movie><episode>--tmdbId {themoviedb_id} --season {season_num} --episode {episode_num}</episode>
 
   Save
   Close
