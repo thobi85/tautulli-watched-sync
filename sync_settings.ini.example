@@ -6,3 +6,7 @@ client_id =
 client_secret = 
 access_token = 
 refresh_token = 
+
+[Tautulli]
+tautulli_url = http://x.x.x.x:8181/api/v2
+api_key = 
