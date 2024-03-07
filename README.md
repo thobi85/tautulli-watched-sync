@@ -25,6 +25,14 @@ Rename `sync_settings.ini.example` to `sync_settings.ini` and add the `user_ids`
   python ./trakt_sync.py --contentType trakt_authenticate --userId -1
   And follow the instructions shown.
 
+  [Tautulli]
+  tautulli_url = url to the address from your tautulli server e.g.: http://192.168.0.1:8181/api/v2
+  api_key = api key from tautulli can be found under settings in the section web interface from the server
+  max_initial_item = maximum amount of movies/episode which will be transferred with the initial load. default value 2000
+
+  Then execute the script for the initial load:
+  python ./trakt_sync.py --contentType initial --userId NumberOfTheUserId
+
 ```
 
 ### Tautulli
