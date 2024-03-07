@@ -3,7 +3,7 @@ Automatically synchronize watched TV Shows and movies to Trakt.tv
 It can also used for the initial load from existing tautulli history to trakt. 
 
 ## Setup
-Download `trakt_letterboxd_sync.py` and `sync_settings.ini.example` to your Tautulli host.
+Download `trakt_sync.py` and `sync_settings.ini.example` to your Tautulli host.
 Rename `sync_settings.ini.example` to `sync_settings.ini` and add the `user_ids`, `client_id`, `client_secret`, `api_key` and `api_secret`. See below for more info on these settings.
 
 **Important!** Make sure `sync-settings.ini` is writable
