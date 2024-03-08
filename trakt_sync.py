@@ -310,33 +310,25 @@ class Trakt:
 
 class initial:
 
-
-    def get_tautulli_url(self):
+    def initial_load():
+        # Set the Tautulli URL
         try:
-            return config.get('Tautulli', 'tautulli_url')
+            tautulli_url = config.get('Tautulli', 'tautulli_url')
         except (NoSectionError, NoOptionError):
             print('ERROR: %s not setup - missing tautulli url' % credential_file)
             sys.exit(1)
-
-    def get_api_key(self):
+        # Set the Tautulli API key
         try:
-            return config.get('Tautulli', 'api_key')
+            api_key = config.get('Tautulli', 'api_key')
         except (NoSectionError, NoOptionError):
             print('ERROR: %s not setup - missing tautulli api key' % credential_file)
             sys.exit(1)
-
-    def get_max_initial_items(self):
+        # Set the Tautulli max items
         try:
-            return config.get('Tautulli', 'max_initial_item')
+            length = config.get('Tautulli', 'max_initial_item')
         except (NoSectionError, NoOptionError):
-            print('ERROR: %s not setup - missing tautulli api key' % credential_file)
+            print('ERROR: %s not setup - missing tautulli max items' % credential_file)
             sys.exit(1)
-
-    def initial_load():
-        # Set the Tautulli API URL and API key
-        tautulli_url = self.get_tautulli_url()
-        api_key = self.get_api_key()
-        length = self.get_max_initial_items()
 
         # Define the user ID and get the history data for that user
         user_id = opts.userId
